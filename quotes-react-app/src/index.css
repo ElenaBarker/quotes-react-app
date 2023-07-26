@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url("/Users/elenabarker/Desktop/CYF Elena/Untitled/quotes-react-app/quotes-react-app/src/background.png");
+  background-image: url("./background.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
