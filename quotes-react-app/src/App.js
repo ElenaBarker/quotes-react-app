@@ -4,7 +4,7 @@ import Quote from "./Quote";
 function App() {
   return (
     <div className="App">
-      <h1>Random Quote</h1>
+      <h1>Harmony of Quotes: Symphony of Wisdom</h1>
       <Quote />
     </div>
   );

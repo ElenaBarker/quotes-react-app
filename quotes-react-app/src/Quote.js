@@ -1,21 +1,30 @@
 import React, { useState } from "react";
 
 const Quote = () => {
-  const [quote, setQuote] = useState("");
+  const [quoteData, setQuoteData] = useState({
+    quote:
+      "A life spent making mistakes is not only more honorable, but more useful than a life spent doing nothing",
+    author: "George Bernhard Shaw",
+  });
 
   const recieveNewQuote = () => {
-    fetch("elenabarker-quote-server.glitch.me/")
+    fetch("https://elenabarker-quote-server.glitch.me/quotes/random")
       .then((response) => {
-        setQuote(response.data.quote);
+        return response.json();
+      })
+      .then((data) => {
+        setQuoteData(data);
+        console.log(data);
       })
       .catch((error) => {
-        console.error("Error fetching quote:", error);
+        console.log(error);
       });
   };
 
   return (
     <div>
-      <p>{quote}</p>
+      <p>"{quoteData.quote}"</p>
+      <p>- {quoteData.author}</p>
       <button onClick={recieveNewQuote}>Get New Quote</button>
     </div>
   );
